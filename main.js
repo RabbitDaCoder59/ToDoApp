@@ -65,16 +65,16 @@ const handleCancelEditing = (id) => {
 }
 
 const handleToggleEditing = (id) => {
+    const taskCards = document.querySelectorAll(".task-card")
+    taskCards.forEach(item => {
+        if(item.classList.contains("editing"))item.classList.remove("editing")
+    })
     const taskItemContainer = document.getElementById(id)
     // Check if the <task-card> element have a class of 'editing' 
-    if (taskItemContainer.classList.contains(`editing`)) {
-        // If already have editing ; remove it
-        taskItemContainer.classList.remove("editing")
-    }
-    else{
+
         // if does not have editing; add it
         taskItemContainer.classList.add("editing")
-    }
+    
 }
  // delete Task
  const  handleDeleteTask = (id) => {
